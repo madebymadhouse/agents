@@ -6,7 +6,7 @@
 
 ![License](https://img.shields.io/github/license/madebymadhouse/agents)
 ![Last Commit](https://img.shields.io/github/last-commit/madebymadhouse/agents)
-![Agents](https://img.shields.io/badge/agents-13-blueviolet)
+![Agents](https://img.shields.io/badge/agents-15-blueviolet)
 
 </div>
 
@@ -33,6 +33,7 @@ Drop this repo into any AI assistant — Claude, ChatGPT, Copilot, whatever you 
 
 | Agent | What it does |
 |---|---|
+| [delegator.agent.md](./agents/delegator.agent.md) | Your single entry point for everything. Describe what you want in plain language — the Delegator reads it, picks the right agents, and dispatches them in the right order. You never need to call individual agents directly. |
 | [orchestrator.agent.md](./agents/orchestrator.agent.md) | Runs the fleet. Breaks large or cross-cutting work into agent-sized tasks, dispatches in the right order, collects outputs, and delivers a unified result. Use when the work is too big for one agent. |
 | [librarian.agent.md](./agents/librarian.agent.md) | Keeps the whole Mad House repo ecosystem in order. Unified branding, consistent wording, cross-repo ref sync, org-wide health reports. Coordinates all other agents. Librarians don't play. |
 | [context-keeper.agent.md](./agents/context-keeper.agent.md) | Solves the compaction problem. Writes and maintains living state files — session logs, decision records, handoffs — so any agent picking up the work can continue without losing ground. Required for multi-session and multi-agent work. |
