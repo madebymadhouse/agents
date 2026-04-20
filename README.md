@@ -20,7 +20,19 @@ You don't run agents from this repo directly. You copy the file you want into yo
 
 ---
 
+## Don't Feel Like Reading?
+
+Drop this repo into any AI assistant — Claude, ChatGPT, Copilot, whatever you use — and ask it to explain any agent, help you pick the right one, or walk you through adding agents to your repo. Everything it needs is already here.
+
+---
+
 ## Agents
+
+### Unification & Oversight
+
+| Agent | What it does |
+|---|---|
+| [librarian.agent.md](./agents/librarian.agent.md) | Keeps the whole Mad House repo ecosystem in order. Unified branding, consistent wording, cross-repo ref sync, org-wide health reports. Coordinates all other agents. Librarians don't play. |
 
 ### Workflow
 
@@ -28,6 +40,7 @@ You don't run agents from this repo directly. You copy the file you want into yo
 |---|---|
 | [auditor.agent.md](./agents/auditor.agent.md) | Audits any repo, service, docs, or environment. Produces scored findings — CRITICAL to LOW — with exact fixes, not vague recommendations. |
 | [updater.agent.md](./agents/updater.agent.md) | Acts on audit findings. Works through them one at a time, verifies each change, and keeps a log of what was done. |
+| [security.agent.md](./agents/security.agent.md) | Security-focused audit. OWASP Top 10, secrets in code, auth gaps, injection surfaces, vulnerable deps, infra exposure. Exact findings, exact fixes. |
 | [playbook-builder.agent.md](./agents/playbook-builder.agent.md) | Turns repeated chat guidance into a real repo, runbook set, or playbook. Use when something keeps getting re-explained in conversation. |
 
 ### Writing & Documentation
@@ -108,7 +121,7 @@ argument-hint: What to tell the agent when invoking it.
 | [madebymadhouse/agents](https://github.com/madebymadhouse/agents) | This repo — all agents |
 | [madebymadhouse/bot-dev-playbook](https://github.com/madebymadhouse/bot-dev-playbook) | Shared workflow and standards for Discord bot development |
 | [madebymadhouse/vps-maintenance-playbook](https://github.com/madebymadhouse/vps-maintenance-playbook) | VPS maintenance notebook for the live server |
-| [samhcharles/chopsticks-lean](https://github.com/samhcharles/chopsticks-lean) | The live Mad House Discord bot |
+| [madebymadhouse/chopsticks-lean](https://github.com/madebymadhouse/chopsticks-lean) | The live Mad House Discord bot |
 
 ---
 

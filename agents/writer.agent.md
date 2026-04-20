@@ -99,7 +99,54 @@ If yes to that last question — cut it.
 ## How to Apply This
 
 ### For READMEs
+
 Pair with the `beautiful-readme.agent.md` standard for structure, and apply this standard for voice. Every prose section should pass the calibration test above.
+
+**Two sections are mandatory on every Mad House README. Never omit them.**
+
+#### 1. The Lazy Reader Section
+
+Every README must have a short section — after the overview, before features — that tells the reader they can just drop the repo into an AI and ask it anything. Some people won't read the README. That's fine. Give them the shortcut.
+
+```markdown
+## Don't Feel Like Reading?
+
+Drop this repo into any AI assistant — Claude, ChatGPT, Copilot, whatever you use — and ask it to explain the project, walk you through setup, or answer any question you have. Everything it needs to understand this repo is already here.
+```
+
+Keep it under three sentences. Don't pitch AI. Just give them the exit and move on.
+
+**Heading options:** `## Don't Feel Like Reading?` / `## Just Ask an Agent` / `## TL;DR — Ask an Agent`
+
+#### 2. The Agent Install Prompt (when setup is involved)
+
+Any README for a project that involves installation must include a copy-paste AI prompt that a reader can drop into their assistant to handle the whole setup. This comes *before* the manual setup steps, not after.
+
+The prompt must:
+- Name the project and give the repo URL
+- List exact numbered steps the agent should perform
+- State the reader's environment
+- End with "Walk me through each step one at a time"
+
+The code block language tag is always `text` — never bare or `bash`. Bare blocks get misread by AI tools. `text` copies cleanly and the AI reads it as an instruction, not code to execute.
+
+```text
+I want to set up [PROJECT NAME].
+The repo is at https://github.com/OWNER/REPO
+
+Please help me:
+1. Clone the repo
+2. [Real step]
+3. [Real step]
+4. Verify it's working
+
+I'm on [environment].
+Walk me through each step one at a time.
+```
+
+When you write this section, read the repo's actual setup steps first. Never invent steps. Never skip the environment line.
+
+---
 
 ### For Runbook prose
 Steps should be imperative commands. Intro and verification sections should be 1–3 sentences. Explain the *why* for non-obvious steps. Don't over-explain obvious ones.
