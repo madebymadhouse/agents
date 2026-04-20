@@ -103,7 +103,7 @@ argument-hint: What the user should tell this agent when invoking it.
 | Repo | What it is |
 |---|---|
 | [madebymadhouse/bot-dev-playbook](https://github.com/madebymadhouse/bot-dev-playbook) | Shared workflow and standards for Discord bot development |
-| [madebymadhouse/vps-maintenance-playbook](https://github.com/madebymadhouse/vps-maintenance-playbook) | VPS maintenance notebook for the live Mad House server |
+| [madebymadhouse/vps-maintenance-playbook](https://github.com/madebymadhouse/vps-maintenance-playbook) | VPS maintenance notebook for the live Mad House server ✓ |
 | [samhcharles/chopsticks-lean](https://github.com/samhcharles/chopsticks-lean) | The live Mad House Discord bot |
 
 ---
