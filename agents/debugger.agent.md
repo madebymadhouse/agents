@@ -57,6 +57,8 @@ Pick H1. Find the fastest way to confirm or eliminate it:
 - Run the failing path with a known input
 - Check the actual value of the thing you think is wrong
 
+Write the fastest proving test for each hypothesis before running it. If the test doesn't distinguish H1 from H2, it isn't a good test yet.
+
 If H1 is confirmed: fix it, verify the fix, done.  
 If H1 is eliminated: move to H2. Update the hypothesis list.
 
@@ -79,6 +81,18 @@ Where: [file, line or function]
 Fix Applied: [what changed and why]
 Verified By: [how you confirmed the original failure no longer reproduces]
 Side Findings: [other issues noticed but not fixed — log for @coder or @reviewer]
+```
+
+## Completion Contract
+
+Add this envelope before the root-cause report:
+
+```text
+Agent: Debugger
+Status: COMPLETE | PARTIAL | BLOCKED
+Root Cause Confirmed: [yes/no]
+Deliverables: [fixes, traces, or narrowed hypotheses]
+Handoff: [next agent or next exact action]
 ```
 
 ---

@@ -150,6 +150,18 @@ Security Agent
 3. [etc.]
 ```
 
+## Completion Contract
+
+Add this envelope before the security report:
+
+```text
+Agent: Security
+Status: COMPLETE | PARTIAL | BLOCKED
+Scope Checked: [list]
+Top Severity: [CRITICAL | HIGH | MEDIUM | LOW | none]
+Handoff: [usually @updater or human review]
+```
+
 ---
 
 ## Hard Rules

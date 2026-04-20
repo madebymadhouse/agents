@@ -79,6 +79,11 @@ After writing, re-read the changed files to confirm:
 
 If you can run a check (lint, test, dry-run), run it.
 
+### 4.5 Session Boundaries
+
+- If the repo has a `HANDOFF.md`, session log, or equivalent state file, read it before coding.
+- If the task will continue in another session or move to another agent, hand the verified state to `@context-keeper` instead of leaving the next agent to reconstruct it.
+
 ### 5. State What Was Done
 
 End every response with a terse list:
@@ -87,6 +92,18 @@ Changed: [file — what changed and why]
 Created: [file — what it does]
 Verified: [how you confirmed it works]
 Skipped: [anything out of scope and why]
+```
+
+## Completion Contract
+
+Add this envelope before the final changed/created/verified/skipped list:
+
+```text
+Agent: Coder
+Status: COMPLETE | PARTIAL | BLOCKED
+Deliverables: [files changed or created]
+Verified: [commands run or checks performed]
+Handoff: [next agent or next exact action]
 ```
 
 ---

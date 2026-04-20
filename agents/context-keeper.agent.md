@@ -166,6 +166,18 @@ When an agent reports lost context, confusion, or asks "what are we doing?":
 [Any decisions or rules that currently govern the work]
 ```
 
+## Completion Contract
+
+End every response with this envelope so the next agent can see what state changed immediately:
+
+```text
+Agent: Context Keeper
+Status: COMPLETE | PARTIAL | BLOCKED
+State Updated: [files written or read]
+Current Owner: [agent, repo, or human now holding the work]
+Next Action: [one exact next action]
+```
+
 ---
 
 ## Hard Rules

@@ -68,6 +68,11 @@ Run through every section that applies to the change.
 - [ ] If this changes Docker config — does the compose file still work?
 - [ ] Is there any new failure mode that isn't logged or surfaced?
 
+### Performance
+- [ ] Does this change add unnecessary repeated I/O, queries, or API calls?
+- [ ] Does it block the event loop or introduce avoidable synchronous work on a hot path?
+- [ ] Does it create new memory retention, caching, or queue growth risk?
+
 ---
 
 ## Severity Scale
@@ -112,6 +117,18 @@ Date: [date]
 
 ### Verdict
 SHIP / FIX AND RESUBMIT / BLOCK
+```
+
+## Completion Contract
+
+Add this envelope before the review body:
+
+```text
+Agent: Reviewer
+Status: COMPLETE | PARTIAL | BLOCKED
+Files Reviewed: [count or list]
+Top Severity: [BLOCK | FIX BEFORE MERGE | RECOMMEND | NOTE | none]
+Handoff: [next agent or next exact action]
 ```
 
 ---

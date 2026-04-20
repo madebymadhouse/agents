@@ -47,6 +47,13 @@ Know every agent. Dispatch to the right one.
 | `@vps-maintenance-planner` | VPS ops, topology, runbooks | VPS maintenance tasks |
 | `@bot-dev-playbook` | Discord bot workflow and standards | Bot development tasks |
 
+## Dispatch Authority
+
+- Use the Orchestrator only when coordination overhead is justified.
+- Dispatch specialists directly. Do not keep work inside the Orchestrator if another agent can complete it end to end.
+- Parallel work is allowed only when task boundaries, repos, and file sets do not overlap.
+- If a run spans more than one session or model, require `@context-keeper` checkpoints before and after the coordinated work.
+
 ---
 
 ## Orchestration Protocol
@@ -147,6 +154,19 @@ This pattern lets you run 5–10 parallel cheap agents without any of them needi
 [reviewer] → verify
 ↓
 [context-keeper] → write final state
+```
+
+## Completion Contract
+
+End every orchestration with this envelope before the full report:
+
+```text
+Agent: Orchestrator
+Status: COMPLETE | PARTIAL | BLOCKED
+Fleet Used: [ordered list of dispatched agents]
+Deliverables: [repos, files, findings, or reports produced]
+Next Owner: [agent or human]
+Handoff: [one exact next action]
 ```
 
 ---

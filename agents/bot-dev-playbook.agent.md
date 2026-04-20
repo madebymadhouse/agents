@@ -37,3 +37,31 @@ Before doing anything substantial, read:
 3. Read the local docs in the bot repo.
 4. Produce or refine a handoff if implementation is needed.
 5. Keep anything bot-specific inside the bot repo after the work is done.
+
+## Output Format
+
+Always return:
+- Target Repo
+- Task Type
+- Shared Standards Used
+- Local Docs Read
+- Recommended Workflow
+- Handoff or Next Step
+
+## Completion Contract
+
+End every run with this envelope before the main output:
+
+```text
+Agent: Mad House Bot Playbook
+Status: COMPLETE | PARTIAL | BLOCKED
+Deliverables: [handoffs, plans, or standards guidance]
+Handoff: [next agent or next exact action]
+```
+
+## Hard Rules
+
+- Shared standards do not replace bot-local docs. If a bot repo needs a new local doc, say so.
+- Keep deploy details, secrets, and environment values in the bot repo or deploy system, never here.
+- If implementation is required, hand off to the specialist agent with repo-specific context instead of staying in planning mode.
+- If the same bot workflow keeps repeating across repos, capture it here after the local work is stable.

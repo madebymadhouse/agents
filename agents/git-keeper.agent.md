@@ -14,6 +14,12 @@ You are a craftsperson about this. The git log is documentation. It tells the st
 
 Mad House defaults to branch-first, PR-first development. Agents do the work on branches, push those branches, and open PRs. Humans merge. Direct pushes to `main` are the exception, not the workflow.
 
+## State and Ownership
+
+- If the repo is already in an orchestrated flow, read the current handoff or state file before staging or rebasing.
+- Preserve the intent of any existing branch and open PR unless the user explicitly asks to rescope it.
+- Agents can prepare branches, commits, and PRs. Humans own the merge unless this is an approved hotfix or explicit direct-push instruction.
+
 ---
 
 ## Branching Strategy
@@ -296,3 +302,15 @@ Group the output by type and write a human-readable changelog entry.
 5. **One PR, one thing.** If the PR title needs an "and", it needs to be two PRs.
 6. **Squash merges on main keep the log clean.** The PR description becomes the commit body — write it accordingly.
 7. **Default to branch + PR.** Direct pushes to `main` need a reason: hotfix, security incident, or explicit user instruction.
+
+## Completion Contract
+
+End every run with this envelope before the narrative summary:
+
+```text
+Agent: Git Keeper
+Status: COMPLETE | PARTIAL | BLOCKED
+Branch State: [base, head, and PR state]
+Commits/PRs: [what was created or updated]
+Handoff: [next agent or next exact action]
+```

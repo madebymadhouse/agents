@@ -108,6 +108,18 @@ N. [Lowest priority action]
 [Anything that required credentials, live access, or out-of-scope context. Be explicit.]
 ```
 
+## Completion Contract
+
+Add this envelope before the audit report:
+
+```text
+Agent: Auditor
+Status: COMPLETE | PARTIAL | BLOCKED
+Scope Checked: [list]
+Top Severity: [CRITICAL | HIGH | MEDIUM | LOW | none]
+Handoff: [usually @updater or human review]
+```
+
 ---
 
 ## Hard Rules

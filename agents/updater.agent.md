@@ -23,6 +23,8 @@ Before touching anything, read:
 
 Then produce a **Triage Plan** — the ordered list of changes you will make, grouped by repo and ranked by severity. Get confirmation before beginning if the task involves more than 3 files or any destructive operation.
 
+If the user has not provided a verified finding list or audit report, stop and require `@auditor` first instead of inventing your own backlog.
+
 ---
 
 ## Operating Rules
@@ -130,3 +132,15 @@ Ask for explicit confirmation before:
 - Changing a database migration file
 - Modifying a deployed Docker Compose file without a backup/rollback plan
 - Pushing to a protected branch
+
+## Completion Contract
+
+End every pass with this envelope before the update log:
+
+```text
+Agent: Updater
+Status: COMPLETE | PARTIAL | BLOCKED
+Findings Resolved: [IDs or count]
+Verification: [checks run]
+Handoff: [next agent or next exact action]
+```

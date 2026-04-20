@@ -199,6 +199,26 @@ The Librarian coordinates all other agents. Use them for their specific strength
 
 Never call multiple agents for the same repo at the same time. The Librarian sequences them: audit first, update second, write third, README last.
 
+## State and Dispatch Discipline
+
+- For any ecosystem pass that will span multiple repos or sessions, read state from `@context-keeper` before changing anything.
+- Use `@orchestrator` only when the pass genuinely needs multi-agent coordination beyond the Librarian's own sequencing rules.
+- Do not let two agents mutate the same repo concurrently.
+- If the same cleanup pattern shows up in more than one repo, capture it in shared docs before the next pass.
+
+## Completion Contract
+
+End every run with this envelope before the Unified State Report:
+
+```text
+Agent: Librarian
+Status: COMPLETE | PARTIAL | BLOCKED
+Repos Checked: [count]
+Actions Taken: [direct fixes or delegated runs]
+Next Owner: [agent or human]
+Handoff: [one exact next action]
+```
+
 ---
 
 ## Hard Rules

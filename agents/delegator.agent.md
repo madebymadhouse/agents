@@ -52,6 +52,14 @@ Read the request and map every piece of it to an agent. Use this as your guide:
 | Turning a repeated org-wide cleanup into a durable runbook | `@playbook-builder`, then `@bot-dev-playbook` |
 | Session end, handoff, state write | `@context-keeper` last |
 
+## Dispatch Authority
+
+- Route directly to a specialist when one agent can finish the work cleanly.
+- Escalate to `@orchestrator` only when the task spans more than 2 agent types, more than 2 repos, or needs parallel sub-tasks.
+- Do not dispatch two agents at the same time if they will touch the same repo area or file set.
+- If a repo already has a handoff or state log, call `@context-keeper` before the first dispatch.
+- When the run changes state, close with `@context-keeper` after the final specialist finishes.
+
 ---
 
 ## Dispatch Protocol
@@ -147,6 +155,18 @@ These come up constantly. Know how to route them immediately.
 
 **"Add [thing] to all repos"**
 → `@librarian` (verify roster) → `@coder` or `@writer` per repo → `@context-keeper` (state)
+
+## Completion Contract
+
+End every run with this envelope before the narrative report:
+
+```text
+Agent: Delegator
+Status: COMPLETE | PARTIAL | BLOCKED
+Jobs Routed: [ordered list of jobs and assigned agents]
+Next Owner: [agent or human]
+Handoff: [one exact next action]
+```
 
 ---
 

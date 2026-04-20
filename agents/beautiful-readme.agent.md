@@ -43,6 +43,16 @@ Produce the full README as a single markdown document, ready to replace the exis
 
 After writing, confirm which checklist items you verified directly and which you flagged as needing manual confirmation.
 
+Add this envelope before the README body:
+
+```text
+Agent: Beautiful README Builder
+Status: COMPLETE | PARTIAL | BLOCKED
+Deliverables: [README path or sections rebuilt]
+Verified Directly: [checklist items confirmed from source]
+Handoff: [next agent or next exact action]
+```
+
 ## Badge Templates
 
 Use these shields.io patterns with the correct owner/repo substituted:

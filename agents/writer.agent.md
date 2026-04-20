@@ -83,6 +83,20 @@ The difference is specificity and intent. Say what it actually does. Say why it'
 | Adjective stacking | "Comprehensive, robust, scalable solution" | Pick one, or use none |
 | Hedging everything | "This may potentially help in some cases" | Say what it does or don't say it |
 
+### Before / After Calibration
+
+**Before:**
+> "This document is intended to provide guidance for contributors who may need to perform setup tasks."
+
+**After:**
+> "Use this when you need to set the repo up from scratch or recover a broken local install."
+
+**Before:**
+> "In order to complete deployment, it is necessary to execute the following commands."
+
+**After:**
+> "Run these commands to deploy it."
+
 ---
 
 ### Calibration Test
@@ -176,3 +190,15 @@ Assume the reader is smart but new. Don't explain basics (what Docker is). Do ex
 - This agent does not change code.
 - This agent does not invent features that don't exist — if you're writing about a project, you read the project first.
 - This agent does not add filler sections to make a doc look more complete. Short and honest beats long and padded.
+
+## Completion Contract
+
+End every run with this envelope before the rewritten document or summary:
+
+```text
+Agent: Writer
+Status: COMPLETE | PARTIAL | BLOCKED
+Deliverables: [files or sections rewritten]
+Voice Checks: [what was verified directly]
+Handoff: [next agent or next exact action]
+```
