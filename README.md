@@ -11,99 +11,103 @@
 
 ---
 
-This repo is the canonical home for all Mad House AI agents. Each agent is a `.agent.md` file with a YAML frontmatter block and a behavior specification that any VS Code Copilot agent, OpenClaw sub-agent, or compatible AI runtime can pick up.
+All the Mad House agents live here. Each one is a `.agent.md` file — a YAML frontmatter block plus a behavior spec that VS Code Copilot, OpenClaw, or any compatible AI runtime can pick up and run.
 
-> [!NOTE]
-> Agents here are **definitions**, not deployments. Copy the `.agent.md` file into the `.github/agents/` directory of any repo where you want to use it.
+You don't run agents from this repo directly. You copy the file you want into your repo's `.github/agents/` folder and it shows up in your context automatically.
+
+> [!TIP]
+> Not sure which agent to use? The `argument-hint` field in each file's frontmatter tells you exactly what to pass when invoking it.
 
 ---
 
 ## Agents
 
-### Workflow Agents
+### Workflow
 
 | Agent | What it does |
 |---|---|
-| [auditor.agent.md](./agents/auditor.agent.md) | Deep structured audit of any repo, service, docs, or environment. Produces scored findings with exact fixes. |
-| [updater.agent.md](./agents/updater.agent.md) | Acts on audit findings. Executes changes systematically, one finding at a time, with verification. |
-| [playbook-builder.agent.md](./agents/playbook-builder.agent.md) | Turns repeated chat guidance into a real repo, playbook, or runbook set. |
+| [auditor.agent.md](./agents/auditor.agent.md) | Audits any repo, service, docs, or environment. Produces scored findings — CRITICAL to LOW — with exact fixes, not vague recommendations. |
+| [updater.agent.md](./agents/updater.agent.md) | Acts on audit findings. Works through them one at a time, verifies each change, and keeps a log of what was done. |
+| [playbook-builder.agent.md](./agents/playbook-builder.agent.md) | Turns repeated chat guidance into a real repo, runbook set, or playbook. Use when something keeps getting re-explained in conversation. |
 
-### Documentation Agents
-
-| Agent | What it does |
-|---|---|
-| [beautiful-readme.agent.md](./agents/beautiful-readme.agent.md) | Writes or rewrites GitHub READMEs to the Mad House beautiful-README standard. |
-
-### Bot Development Agents
+### Writing & Documentation
 
 | Agent | What it does |
 |---|---|
-| [bot-dev-playbook.agent.md](./agents/bot-dev-playbook.agent.md) | Mad House bot development workflow — standards, handoffs, and coordination. |
+| [writer.agent.md](./agents/writer.agent.md) | Rewrites any doc, README, or prose to sound like a person wrote it. Applies the Mad House humanized writing standard — no jargon, no filler, no corporate voice. |
+| [beautiful-readme.agent.md](./agents/beautiful-readme.agent.md) | Writes GitHub READMEs with centered heroes, real badges, callout blocks, mermaid diagrams, and feature grids. No bullet wallpaper. |
 
-### Infrastructure Agents
+### Bot Development
 
 | Agent | What it does |
 |---|---|
-| [vps-maintenance-planner.agent.md](./agents/vps-maintenance-planner.agent.md) | VPS maintenance, runtime inspection, topology updates, and safe change planning. |
+| [bot-dev-playbook.agent.md](./agents/bot-dev-playbook.agent.md) | Mad House Discord bot development workflow — standards, handoffs, and coordination across bot repos. |
+
+### Infrastructure
+
+| Agent | What it does |
+|---|---|
+| [vps-maintenance-planner.agent.md](./agents/vps-maintenance-planner.agent.md) | VPS maintenance planning — runtime inspection, topology updates, runbooks, and safe change sequences. |
 
 ---
 
 ## How to Use an Agent
 
-**In VS Code Copilot:**
-
-Copy the `.agent.md` file into your repo's `.github/agents/` directory. VS Code will pick it up automatically.
+Drop the `.agent.md` file into your repo's `.github/agents/` directory. VS Code picks it up automatically.
 
 ```bash
-# Example: add the auditor to your repo
-cp agents/auditor.agent.md /your/repo/.github/agents/auditor.agent.md
+# Add the auditor to any repo
+cp agents/auditor.agent.md your-repo/.github/agents/auditor.agent.md
 ```
 
-**Invoke by name in chat:**
+Then invoke by name in chat:
+
 ```
-@auditor audit this repo, scope: docs + structure
-@updater apply the HIGH and CRITICAL findings from this audit
-@beautiful-readme rewrite the README for this repo
+@auditor audit this repo, scope: docs + security
+@updater fix all HIGH and CRITICAL findings from that audit
+@writer rewrite the README for this project — readers are developers, direct tone
+@beautiful-readme rewrite the README for madebymadhouse/chopsticks-lean
 ```
 
 ---
 
 ## Agent Format
 
-Every agent in this repo follows the same format:
+Every agent follows this format:
 
 ```markdown
 ---
 name: Agent Name
-description: One sentence — when to use this agent and what it does.
+description: One sentence. When to reach for this agent and what it does.
 tools: [read, search, execute, edit, todo, agent]
 user-invocable: true
-argument-hint: What the user should tell this agent when invoking it.
+argument-hint: What to tell the agent when invoking it.
 ---
 
-[Agent behavior specification — required reads, goals, constraints, process, output format]
+[Behavior specification — required reads, goals, constraints, process, output format]
 ```
 
 ---
 
 ## Adding a New Agent
 
-1. Create a new file in `agents/` named `your-agent-name.agent.md`
+1. Create `agents/your-agent-name.agent.md`
 2. Use the format above
-3. Add a row to the table in this README
+3. Add a row to the right table in this README
 4. Open a PR
 
 > [!TIP]
-> If you're not sure what an agent needs, use the `playbook-builder.agent.md` to design it first.
+> Use `playbook-builder.agent.md` to design a new agent before writing it from scratch. It'll help you define scope, constraints, and output format before you're committed to a shape.
 
 ---
 
-## Related Repos
+## Mad House Repos
 
 | Repo | What it is |
 |---|---|
+| [madebymadhouse/agents](https://github.com/madebymadhouse/agents) | This repo — all agents |
 | [madebymadhouse/bot-dev-playbook](https://github.com/madebymadhouse/bot-dev-playbook) | Shared workflow and standards for Discord bot development |
-| [madebymadhouse/vps-maintenance-playbook](https://github.com/madebymadhouse/vps-maintenance-playbook) | VPS maintenance notebook for the live Mad House server ✓ |
+| [madebymadhouse/vps-maintenance-playbook](https://github.com/madebymadhouse/vps-maintenance-playbook) | VPS maintenance notebook for the live server |
 | [samhcharles/chopsticks-lean](https://github.com/samhcharles/chopsticks-lean) | The live Mad House Discord bot |
 
 ---
