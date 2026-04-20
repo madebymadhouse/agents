@@ -56,6 +56,16 @@ Agent body here.
 
 **Body:** Write it for the agent, not for a human reading it. Use clear section headers. Be explicit about what the agent should and shouldn't do. The more concrete, the better the behavior.
 
+Preferred section shape for established agents:
+
+- `## Required First Read`
+- `## Required Process` or equivalent numbered workflow
+- `## Output Format`
+- `## Completion Contract`
+- `## Hard Rules`
+
+The exact headings can vary when the domain needs it, but the behavior contract should cover all five.
+
 ---
 
 ## Commit format

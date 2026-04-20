@@ -136,6 +136,14 @@ argument-hint: What to tell the agent when invoking it.
 [Behavior specification — required reads, goals, constraints, process, output format]
 ```
 
+Every mature agent in this repo should include, when applicable:
+
+- `## Required First Read`
+- `## Required Process` or equivalent operating steps
+- `## Output Format`
+- `## Completion Contract`
+- `## Hard Rules`
+
 ---
 
 ## Adding a New Agent
