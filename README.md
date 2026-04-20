@@ -6,7 +6,7 @@
 
 ![License](https://img.shields.io/github/license/madebymadhouse/agents)
 ![Last Commit](https://img.shields.io/github/last-commit/madebymadhouse/agents)
-![Agents](https://img.shields.io/badge/agents-15-blueviolet)
+![Agents](https://img.shields.io/badge/agents-16-blueviolet)
 
 </div>
 
@@ -50,6 +50,7 @@ Drop this repo into any AI assistant — Claude, ChatGPT, Copilot, whatever you 
 
 | Agent | What it does |
 |---|---|
+| [git-keeper.agent.md](./agents/git-keeper.agent.md) | Version control workflow — branching strategy, conventional commits, staging discipline, PR descriptions, merge strategy, and keeping the git history clean and human. |
 | [auditor.agent.md](./agents/auditor.agent.md) | Deep structured audit of any repo, service, docs, or environment. Scored findings — CRITICAL to LOW — with exact fixes. |
 | [updater.agent.md](./agents/updater.agent.md) | Acts on audit findings. Works through them one at a time, verifies each change, keeps a log. Paired with the auditor. |
 | [security.agent.md](./agents/security.agent.md) | Security-focused audit. OWASP Top 10, secrets in code and git history, auth gaps, injection surfaces, vulnerable deps, infra exposure. Exact findings, exact fixes. |
