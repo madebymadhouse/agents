@@ -24,6 +24,10 @@ The Librarian runs a unification pass before any agent PR merges. The Reviewer c
 2. Make the change
 3. Open a PR with a clear description of what changed and why
 
+Mad House defaults to branch-first, PR-first development. Agents can prepare the branch and open the PR, but a human should merge. The org-wide workflow lives here:
+
+https://github.com/madebymadhouse/bot-dev-playbook/blob/main/AGENTIC_GIT_WORKFLOW.md
+
 ### Agent file structure
 
 Every `.agent.md` file must have valid YAML frontmatter:
