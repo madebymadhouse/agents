@@ -12,9 +12,9 @@
 
 ---
 
-All the Mad House agents live here. Each one is a `.agent.md` file — a YAML frontmatter block plus a behavior spec that VS Code Copilot, OpenClaw, or any compatible AI runtime can pick up and run.
+All the Mad House agents live here. Each one is a `.agent.md` file — a YAML frontmatter block plus a behavior spec that Copilot, Claude, Gemini, Codex, OpenClaw, or any compatible agent runner can pick up and map into its own tool system.
 
-You don't run agents from this repo directly. You copy the file you want into your repo's `.github/agents/` folder and it shows up in your context automatically.
+You don't run agents from this repo directly. You copy the file you want into the discovery path your agent runner expects. For VS Code Copilot that is `.github/agents/`. Other runners can ingest the same file and map the portable tool aliases to their own capabilities.
 
 > [!TIP]
 > Not sure which agent to use? The `argument-hint` field in each file's frontmatter tells you exactly what to pass when invoking it.
@@ -74,7 +74,7 @@ Drop this repo into any AI assistant — Claude, ChatGPT, Copilot, whatever you 
 
 ## How to Use an Agent
 
-Drop the `.agent.md` file into your repo's `.github/agents/` directory. VS Code picks it up automatically.
+Drop the `.agent.md` file into your runner's discovery path. In VS Code Copilot that is `.github/agents/`.
 
 ```bash
 # Clone and copy the agents you want
@@ -135,6 +135,12 @@ argument-hint: What to tell the agent when invoking it.
 
 [Behavior specification — required reads, goals, constraints, process, output format]
 ```
+
+Use Copilot tool aliases in frontmatter unless you have a specific extension tool you truly need. Prefer small sets like `read`, `search`, `execute`, `edit`, `web`, `todo`, and `agent` over giant tool dumps.
+
+These aliases are the portable core of the repo. Copilot recognizes them directly, and other runners can map them without changing the agent body.
+
+See [PORTABILITY.md](./PORTABILITY.md) for the cross-platform contract.
 
 ---
 

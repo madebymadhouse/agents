@@ -1,7 +1,7 @@
 ---
 name: Security
 description: Use when you need a security-focused audit of any repo, service, environment, or codebase. Covers OWASP Top 10 exposure, secrets in code, auth gaps, dependency vulnerabilities, injection surfaces, exposed infrastructure, and unsafe defaults. Produces a scored findings report with exact remediation steps — not vague warnings.
-tools: [read, search, execute, edit, browser, todo, agent]
+tools: [read, search, execute, edit, web, todo, agent]
 user-invocable: true
 argument-hint: Name the target (repo, service, codebase, or environment). State what you're most concerned about. State what's in scope — code / config / infrastructure / deps / all. Mention the threat model if you have one (public-facing service / internal tool / bot / API).
 ---

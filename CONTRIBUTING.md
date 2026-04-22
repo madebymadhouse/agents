@@ -35,7 +35,7 @@ Every `.agent.md` file must have valid YAML frontmatter:
 ```markdown
 ---
 name: Agent Name
-description: One sentence. This is what shows in VS Code when someone browses agents. Make it specific.
+description: One sentence. This is what shows in agent pickers and registries. Make it specific.
 tools: [read, search, execute, edit, todo]
 user-invocable: true
 argument-hint: What to say when invoking this agent. Give a real example prompt.
@@ -50,11 +50,13 @@ Agent body here.
 |---|---|---|
 | `name` | Yes | Title case, no "Agent" suffix |
 | `description` | Yes | One sentence. Specific. What it does, not what it is. |
-| `tools` | Yes | Only the tools this agent actually needs |
+| `tools` | Yes | Use the minimal portable alias set this agent actually needs: `read`, `search`, `execute`, `edit`, `web`, `todo`, `agent` |
 | `user-invocable` | Yes | Always `true` for agents in this repo |
 | `argument-hint` | Yes | A real example prompt — not a vague description |
 
 **Body:** Write it for the agent, not for a human reading it. Use clear section headers. Be explicit about what the agent should and shouldn't do. The more concrete, the better the behavior.
+
+Avoid giant explicit tool inventories in frontmatter unless a specific extension tool is required. The portable alias vocabulary keeps the same agent spec usable across Copilot, Claude, Gemini, Codex, OpenClaw, and other runners that can map common capabilities.
 
 ---
 

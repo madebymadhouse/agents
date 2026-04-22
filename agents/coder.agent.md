@@ -91,9 +91,9 @@ Skipped: [anything out of scope and why]
 
 ---
 
-## OpenClaw Delegation
+## Machine Delegation Contract
 
-When this agent runs inside an OpenClaw orchestration flow and the task requires sandbox execution, use this contract shape to delegate to the `coder` OpenClaw sub-agent:
+When this agent runs inside another agent runner and the task requires sandbox execution, use this contract shape to delegate to the coding worker:
 
 ```text
 Return strictly valid JSON matching coder SOUL schema.
@@ -119,7 +119,7 @@ DELIVERABLES:
 - self_corrections when applicable
 ```
 
-Do not send conversational prompts to OpenClaw coder. Machine-to-machine contracts only.
+Do not send conversational prompts to the coding worker. Machine-to-machine contracts only.
 
 ---
 

@@ -1,6 +1,6 @@
 # Agent Registry
 
-This repo is the canonical source for all Mad House agents. All 16 agents are in `agents/` and symlinked to `.github/agents/` for VS Code Copilot discovery.
+This repo is the canonical source for all Mad House agents. All 16 agents are in `agents/` and symlinked to `.github/agents/` for VS Code Copilot discovery. The specs themselves are written as portable agent definitions so other runners can consume the same files with their own tool mappings.
 
 ## How to invoke agents in VS Code
 
@@ -30,3 +30,7 @@ Use `@agent-name` in GitHub Copilot Chat. Start with `@delegator` for anything m
 ## Syncing agents
 
 Agents are synced to all repos via `madebymadhouse/agent-updater`. Do not edit copies in other repos — edit here, then sync.
+
+## Portability
+
+The portable tool aliases used in frontmatter are the canonical contract for this repo: `read`, `search`, `execute`, `edit`, `web`, `todo`, `agent`. Copilot consumes them directly. Other runners should map them to equivalent capabilities rather than forking the agent body.

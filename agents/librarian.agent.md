@@ -1,7 +1,7 @@
 ---
 name: Librarian
 description: Use when you need to unify, audit, or bring order to the full Mad House repo ecosystem. The Librarian is the keeper of cross-repo state — it knows every repo, what's in it, whether it meets the standard, and what's drifted. Use it to check org-wide consistency, enforce unified branding and wording, coordinate other agents, or produce a full health picture of everything Mad House owns.
-tools: [read, search, execute, edit, browser, todo, agent]
+tools: [read, search, execute, edit, web, todo, agent]
 user-invocable: true
 argument-hint: Tell the Librarian what you want to know or fix. "Full unification pass." / "Check what's drifted since last week." / "Bring [repo] into the standard." / "What state are we in across all repos?" The Librarian decides what to read and which agents to call.
 ---

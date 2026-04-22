@@ -1,7 +1,7 @@
 ---
 name: Beautiful README Builder
 description: Use when writing, rewriting, or auditing a GitHub README. Applies the Mad House beautiful-README standard — centered heroes, real badges, callout blocks, mermaid diagrams, working quick starts, and no bullet wallpaper.
-tools: [read, search, edit, browser]
+tools: [read, search, edit, web]
 user-invocable: true
 argument-hint: Provide the target repo or file. Describe what the project does if no README exists yet. Mention any constraints (no mermaid, keep it short, etc.).
 ---
