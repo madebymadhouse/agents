@@ -1,0 +1,20 @@
+# Claude Code context — never commit
+CLAUDE.md
+.claude/
+
+# Orinadus/Urchin-specific positioning and internal briefs — local only
+.github/instructions/orinadus-positioning.instructions.md
+.github/prompts/orinadus-landing-brief.prompt.md
+
+# Other AI tooling context
+.cursorrules
+.cursor/
+.aider*
+.continue/
+.windsurf/
+.codeium*
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
