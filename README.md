@@ -6,7 +6,7 @@
 
 ![License](https://img.shields.io/github/license/madebymadhouse/agents)
 ![Last Commit](https://img.shields.io/github/last-commit/madebymadhouse/agents)
-![Agents](https://img.shields.io/badge/agents-16-blueviolet)
+![Agents](https://img.shields.io/badge/agents-19-blueviolet)
 
 </div>
 
@@ -70,6 +70,14 @@ Drop this repo into any AI assistant — Claude, ChatGPT, Copilot, whatever you 
 |---|---|
 | [bot-dev-playbook.agent.md](./agents/bot-dev-playbook.agent.md) | Mad House Discord bot development workflow — standards, handoffs, and coordination across bot repos. |
 
+### Sites & Product Pages
+
+| Agent | What it does |
+|---|---|
+| [site-architect.agent.md](./agents/site-architect.agent.md) | Turns rough site ideas into build-ready page briefs — audience, CTA stack, page map, section specs, and asset needs. |
+| [site-designer.agent.md](./agents/site-designer.agent.md) | Translates a site brief into visual direction, section layout, interaction notes, and copy structure for enterprise-style pages. |
+| [site-builder.agent.md](./agents/site-builder.agent.md) | Implements landing pages, marketing site sections, and docs-home surfaces in code from an approved brief and design direction. |
+
 ---
 
 ## How to Use an Agent
@@ -94,6 +102,9 @@ Then invoke by name in chat:
 @security audit this repo — scope: secrets + auth + deps
 @context-keeper write the handoff for this session
 @librarian full unification pass across all repos
+@site-architect shape the homepage for a developer tool around its core substrate and onramp
+@site-designer turn this site brief into a dark enterprise AI landing page direction
+@site-builder implement the new hero and feature sections in src/app/page.tsx
 ```
 
 ---
@@ -150,6 +161,15 @@ See [PORTABILITY.md](./PORTABILITY.md) for the cross-platform contract.
 2. Follow the format above
 3. Add a row to the right table in this README
 4. Open a PR — see Contributing below
+
+## Workspace Extras For Site Work
+
+This repo also includes site-building workflow files for VS Code Copilot:
+
+- `.github/instructions/site-build.instructions.md`
+- `.github/prompts/site-build-pass.prompt.md`
+
+Drop these into your repo alongside the site agents for a consistent build workflow.
 
 > [!TIP]
 > Use `@playbook-builder` to design a new agent before writing it. Define scope, constraints, and output format before committing to a shape.
